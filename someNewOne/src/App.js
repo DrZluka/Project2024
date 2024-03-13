@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import { connect } from 'react-redux';
 import './App.css';
+import Title from './components/title/title';
+import { Component } from 'react';
+import { changeTitleCreator } from './components/redus-store/actions';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const {modalFromStore, dispatch} = this.props
+    return (
+      <div className="App">
+          {/* some new comment */}
+          <h1>blah-blah</h1>
+        <Title />
+        <button onClick={()=> this.props.dispatch(changeTitleCreator("...end I'll use that for good!"))}>chenge title button</button>
+
+      </div>
+    );
+  }
 }
 
-export default App;
+
+export default connect()(App);
