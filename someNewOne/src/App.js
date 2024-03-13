@@ -11,6 +11,8 @@ class App extends Component {
       <div className="App">
           {/* some new comment */}
           <h1>blah-blah</h1>
+          <h1>blah-blah</h1>
+          <h1>blah-blah</h1>
         <Title />
         <button onClick={()=> this.props.dispatch(changeTitleCreator("...end I'll use that for good!"))}>chenge title button</button>
 
